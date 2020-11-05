@@ -9,39 +9,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="6dp"
-        app:srcCompat="@drawable/ic_baseline_chevron_left_24" />
+        android:alpha="0.72"
+        android:padding="16dp"
+        app:srcCompat="@drawable/ic_arrow_left" />
 
     <ImageView
         android:id="@+id/ivForward"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="6dp"
-        app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
+        android:alpha="0.72"
+        android:padding="16dp"
+        app:srcCompat="@drawable/ic_arrow_right" />
 
     <ImageView
         android:id="@+id/ivMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="8dp"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
+        android:alpha="0.72"
+        android:padding="16dp"
+        app:srcCompat="@drawable/ic_ellipsis" />
 
     <ImageView
         android:id="@+id/ivWindows"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="13dp"
-        app:srcCompat="@drawable/ic_baseline_check_box_outline_blank_24" />
+        android:alpha="0.72"
+        android:padding="16dp"
+        app:srcCompat="@drawable/ic_square" />
 
     <ImageView
         android:id="@+id/ivHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="13dp"
-        app:srcCompat="@drawable/ic_baseline_home_24" />
+        android:alpha="0.72"
+        android:padding="16dp"
+        app:srcCompat="@drawable/ic_home" />
 
 </LinearLayout>

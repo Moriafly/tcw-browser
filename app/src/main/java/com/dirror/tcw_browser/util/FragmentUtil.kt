@@ -5,10 +5,14 @@ import com.dirror.tcw_browser.ui.fragment.WebFragment
 
 object FragmentUtil {
 
-    val fragmentArrayList = ArrayList<Fragment>()
+    val fragmentArrayList = ArrayList<WebFragment>()
 
     fun addWebFragment() {
         fragmentArrayList.add(WebFragment())
+    }
+
+    fun test() {
+
     }
 
 }

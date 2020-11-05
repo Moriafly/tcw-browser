@@ -1,4 +1,4 @@
-package com.dirror.music.ui.base
+package com.dirror.tcw_browser.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
