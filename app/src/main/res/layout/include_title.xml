@@ -7,13 +7,15 @@
 
     <TextView
         android:id="@+id/tvWebsiteTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:text=""
-        android:textSize="12sp"
         android:textColor="@color/textForeground"
+        android:textSize="12sp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/ivReload"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,9 +28,11 @@
         android:background="@color/transparency"
         android:ems="10"
         android:minHeight="0dp"
+        android:singleLine="true"
         android:text="blank"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivReload"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

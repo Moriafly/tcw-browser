@@ -24,6 +24,7 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun initView() {
+
         webView.settings.javaScriptEnabled = true // 支持 JavaScript
         webView.settings.cacheMode = WebSettings.LOAD_DEFAULT // 默认缓存规则
         webView.webViewClient = object : WebViewClient() {
