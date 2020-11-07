@@ -7,15 +7,6 @@
     tools:context=".MainActivity">
 
     <include
-        android:id="@+id/includeMenu"
-        layout="@layout/include_menu"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <include
         android:id="@+id/includeTitle"
         layout="@layout/include_title"
         android:layout_width="0dp"
@@ -39,7 +30,7 @@
         android:id="@+id/clForeground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:alpha="0.2"
+        android:alpha="0.25"
         android:background="@color/textForeground"
         app:layout_constraintBottom_toTopOf="@+id/includeMenu"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +45,15 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         app:layout_constraintBottom_toTopOf="@+id/includeMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/includeMenu"
+        layout="@layout/include_menu"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

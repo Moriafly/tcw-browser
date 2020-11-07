@@ -7,6 +7,11 @@ object FragmentUtil {
 
     val fragmentArrayList = ArrayList<WebFragment>()
 
+    init {
+        // addWebFragment()
+        // fragmentArrayList[0].setUrl("http://www.baidu.com")
+    }
+
     fun addWebFragment() {
         fragmentArrayList.add(WebFragment())
     }

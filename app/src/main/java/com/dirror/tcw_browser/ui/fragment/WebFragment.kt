@@ -1,13 +1,17 @@
 package com.dirror.tcw_browser.ui.fragment
 
 import android.annotation.SuppressLint
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.webkit.*
 import com.dirror.tcw_browser.MainActivity
 import com.dirror.tcw_browser.R
 import com.dirror.tcw_browser.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_web.*
+import kotlinx.android.synthetic.main.include_home.view.*
 
 
 class WebFragment : BaseFragment(R.layout.fragment_web) {
@@ -90,6 +94,28 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
     }
 
     override fun initListener() {
+        includeHome.etSearch.apply {
+            setOnEditorActionListener { _, p1, _ ->
+                if (p1 == EditorInfo.IME_ACTION_SEARCH) { // 软键盘点击了搜索
+                    search()
+                }
+                false
+            }
+            addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+                override fun afterTextChanged(s: Editable) {
+                    if (etSearch.text.toString() != "") {
+                        // btnClear.visibility = View.VISIBLE // 有文字，显示清楚按钮
+                    } else {
+                        // btnClear.visibility = View.INVISIBLE // 隐藏
+                    }
+                }
+            })
+        }
+    }
+
+    private fun search() {
 
     }
 
