@@ -59,6 +59,10 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             setOptionsVisibility(false)
         }
 
+        includeMenu.ivHome.setOnClickListener {
+            FragmentUtil.fragmentArrayList[0].showHome()
+        }
+
 
     }
 

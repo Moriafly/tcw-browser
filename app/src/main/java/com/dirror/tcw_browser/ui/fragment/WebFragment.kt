@@ -1,6 +1,8 @@
 package com.dirror.tcw_browser.ui.fragment
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
@@ -10,6 +12,7 @@ import android.webkit.*
 import com.dirror.tcw_browser.MainActivity
 import com.dirror.tcw_browser.R
 import com.dirror.tcw_browser.ui.base.BaseFragment
+import com.dirror.tcw_browser.util.toast
 import kotlinx.android.synthetic.main.fragment_web.*
 import kotlinx.android.synthetic.main.include_home.view.*
 
@@ -37,11 +40,19 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
 //                val intent = Intent(application, WebActivity::class.java)
 //                intent.putExtra("extra_webUrlStr", request?.url.toString())
 //                // intent.putExtra("extra_webTitleStr", request?.)
-//                startActivity(intent)
+//                startActivity(intent
+
+//                Intent(Intent.ACTION_VIEW, Uri.parse(request?.url.toString())).apply {
+//                    startActivity(this)
+//                }
                 return super.shouldOverrideUrlLoading(view, request)
+
+
 //                return true // 不加载
                 // return false
             }
+
+
 
         }
 
@@ -56,16 +67,8 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
                     it.setWebsiteTitle(title)
                     // 设置网站 URL
                     it.setWebsiteUrl(webView.url?:"")
-                    if (canGoBack()) {
-                        it.setGoBackAlpha(true)
-                    } else {
-                        it.setGoBackAlpha(false)
-                    }
-                    if (canGoForward()) {
-                        it.setGoForwardAlpha(true)
-                    } else {
-                        it.setGoForwardAlpha(false)
-                    }
+
+
                 }
 
 
@@ -115,8 +118,12 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
         }
     }
 
+    /**
+     * 搜索
+     */
     private fun search() {
-
+        hideHome()
+        setUrl("https://www.baidu.com")
     }
 
     // 设置网站 URL
@@ -132,7 +139,12 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
     }
 
     fun goBack() {
-        webView.goBack()
+        if (webView.canGoBack()) {
+            webView.goBack()
+        } else {
+            // toast("回到主页")
+            showHome()
+        }
     }
 
     fun canGoBack(): Boolean {
@@ -140,11 +152,28 @@ class WebFragment : BaseFragment(R.layout.fragment_web) {
     }
 
     fun goForward() {
-        webView.goForward()
+        if (webView.canGoForward()) {
+            hideHome()
+            webView.goForward()
+        }
     }
 
     fun canGoForward(): Boolean {
         return webView.canGoForward()
+    }
+
+    /**
+     * 显示 home
+     */
+    fun showHome() {
+        includeHome.visibility = View.VISIBLE
+        webView.visibility = View.GONE
+    }
+
+    fun hideHome() {
+        // home 消失
+        includeHome.visibility = View.GONE
+        webView.visibility = View.VISIBLE
     }
 
 }
